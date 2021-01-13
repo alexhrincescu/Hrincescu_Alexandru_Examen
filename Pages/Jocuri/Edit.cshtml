@@ -1,0 +1,61 @@
+﻿@page "{id:int}"
+@model Hrincescu_Alexandru_Examen.Pages.Jocuri.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="text-center">
+    <h1>Editează</h1>
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="JocuriVideo.ID" />
+            <div class="form-group">
+                <label asp-for="JocuriVideo.Titlu" class="control-label"></label>
+                <input asp-for="JocuriVideo.Titlu" class="form-control" />
+                <span asp-validation-for="JocuriVideo.Titlu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JocuriVideo.DataLansarii" class="control-label"></label>
+                <input asp-for="JocuriVideo.DataLansarii" class="form-control" />
+                <span asp-validation-for="JocuriVideo.DataLansarii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JocuriVideo.Gen" class="control-label"></label>
+                <input asp-for="JocuriVideo.Gen" class="form-control" />
+                <span asp-validation-for="JocuriVideo.Gen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JocuriVideo.Preţ" class="control-label"></label>
+                <input asp-for="JocuriVideo.Preţ" class="form-control" />
+                <span asp-validation-for="JocuriVideo.Preţ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JocuriVideo.Platforma" class="control-label"></label>
+                <input asp-for="JocuriVideo.Platforma" class="form-control" />
+                <span asp-validation-for="JocuriVideo.Platforma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JocuriVideo.Notă" class="control-label"></label>
+                <input asp-for="JocuriVideo.Notă" class="form-control" />
+                <span asp-validation-for="JocuriVideo.Notă" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvează" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Întoarcere spre listă</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

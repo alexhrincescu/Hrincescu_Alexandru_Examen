@@ -1,0 +1,82 @@
+﻿@page
+@model Hrincescu_Alexandru_Examen.Pages.Jocuri.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Listă jocuri video</h1>
+</div>
+
+
+<form>
+    <p>
+        <select asp-for="GenJoc" asp-items="Model.Gen">
+            <option value="">All</option>
+        </select>
+        Titlu: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filtrează" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JocuriVideo[0].Titlu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JocuriVideo[0].DataLansarii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JocuriVideo[0].Gen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JocuriVideo[0].Preţ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JocuriVideo[0].Platforma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JocuriVideo[0].Notă)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.JocuriVideo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titlu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataLansarii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preţ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Platforma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notă)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div class="text-center">
+    <p>
+        <a asp-page="Create">Adaugă un joc video</a>
+    </p>
+</div>

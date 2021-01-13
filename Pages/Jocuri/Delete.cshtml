@@ -1,0 +1,57 @@
+﻿@page "{id:int}"
+@model Hrincescu_Alexandru_Examen.Pages.Jocuri.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Eşti sigur că doreşti să ştergi acest joc?</h1>
+</div>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JocuriVideo.Titlu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JocuriVideo.Titlu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JocuriVideo.DataLansarii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JocuriVideo.DataLansarii)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JocuriVideo.Gen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JocuriVideo.Gen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JocuriVideo.Preţ)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JocuriVideo.Preţ)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JocuriVideo.Platforma)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JocuriVideo.Platforma)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JocuriVideo.Notă)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JocuriVideo.Notă)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="JocuriVideo.ID" />
+        <input type="submit" value="Şterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Întoarcere la listă</a>
+    </form>
+</div>
